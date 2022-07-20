@@ -3,20 +3,14 @@ import { useForm } from "../hooks/useForm";
 import { Message } from "./Message";
 
 export const FormWithCustomHook = () => {
-  const { form, setForm } = useForm({
-    username: "strider",
-    email: "fernando@gmail.com",
-    password: "",
-  });
-  const { password, username, email } = form;
-
-  const onInputChange = ({ target }) => {
-    const { name, value } = target;
-    setForm({
-      ...form,
-      [name]: value,
+  const { form, onInputChange, password, username, email, onResetForm } =
+    useForm({
+      username: "",
+      email: "",
+      password: "",
     });
-  };
+  // const { password, username, email } = form;
+
   useEffect(() => {
     console.log("useEffect");
   }, []);
@@ -50,6 +44,10 @@ export const FormWithCustomHook = () => {
         value={password}
         onChange={onInputChange}
       />
+
+      <button onClick={onResetForm} className="btn btn-primary mt-2">
+        borrar
+      </button>
     </>
   );
 };
