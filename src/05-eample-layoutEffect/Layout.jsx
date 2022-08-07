@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useCounter } from "../hooks/useCounter";
 import { useFetch } from "../hooks/useFetch";
-import { LoadingQuote } from "./LoadingQuote";
-import { Quotes } from "./Quotes";
+import { LoadingQuote } from "../03-examples/LoadingQuote";
+import { Quotes } from "../03-examples/Quotes";
 
-export const MultipleCustomHooks = () => {
+export const Layout = () => {
   const { counter, increment } = useCounter(1);
   const [showMessage, setShowMessage] = useState();
   const { data, isLoading, hasError } = useFetch(
