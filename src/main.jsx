@@ -14,9 +14,13 @@ import "./08-reducer/intro-reducer";
 
 import { CounterWithCustomHook } from "./useState/CounterWithCustomHook";
 import TodoApp from "./08-reducer/TodoApp";
+import { MainApp } from "./useContext/MainApp";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <TodoApp />
-  </React.StrictMode>
+  <BrowserRouter>
+    <React.StrictMode>
+      <MainApp />
+    </React.StrictMode>
+  </BrowserRouter>
 );
