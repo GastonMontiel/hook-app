@@ -16,11 +16,13 @@ import { CounterWithCustomHook } from "./useState/CounterWithCustomHook";
 import TodoApp from "./08-reducer/TodoApp";
 import { MainApp } from "./useContext/MainApp";
 import { BrowserRouter } from "react-router-dom";
-
+import UserProvider from "./useContext/context/UserProvider";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <React.StrictMode>
+    <UserProvider>
+      {/* <React.StrictMode> */}
       <MainApp />
-    </React.StrictMode>
+      {/* </React.StrictMode> */}
+    </UserProvider>
   </BrowserRouter>
 );
