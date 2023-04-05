@@ -6,11 +6,11 @@ export const Navbar = () => {
   const navigate = useNavigate();
   const {
     authState: { user },
-    onLogout,
+    logout,
   } = useContext(AuthContext);
   const onLogOut = () => {
     //navigate
-    onLogout;
+    logout();
     navigate("login", { replace: true });
   };
   return (
