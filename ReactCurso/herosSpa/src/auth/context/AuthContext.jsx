@@ -20,6 +20,7 @@ export const AuthProvider = ({ children }) => {
     const user = { id: "ABX", name: name };
     const action = { type: types.login, payload: user };
     localStorage.setItem("user", JSON.stringify(user));
+    console.log("dispatch");
     dispatch(action);
   };
 
@@ -31,7 +32,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ authState, login: onLogin, logout: onLogout }}
+      value={{ ...authState, login: onLogin, logout: onLogout }}
     >
       {children}
     </AuthContext.Provider>

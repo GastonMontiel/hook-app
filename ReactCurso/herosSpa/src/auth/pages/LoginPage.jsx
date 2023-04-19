@@ -8,6 +8,7 @@ export const LoginPage = () => {
   const onLogin = () => {
     login("gaston");
     navigate("/marvel", { replace: true });
+    console.log("entre");
   };
   return (
     <div>
